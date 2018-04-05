@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo for ing JS</title>
+</head>
+<body>
+	<h1>Ciclo for in Js</h1>
+</body>
+	<script>
+		
+		const nombre = 'Ismael'
+		const dias = [
+			"lunes",
+			"martes",
+			"miercoles",
+			"jueves",
+			"viernes",
+			"sábado",
+			"domigno",
+		]
+
+		function correr() {
+			const min = 5
+			const max = 15
+			return Math.round(Math.random() *  (max - min)) + min
+		}
+
+		let totalKms = 0
+		const length = dias.length
+		for(let i = 0; i < dias.length; i++) {
+			const kms = correr()
+			totalKms = totalKms + kms
+			console.log(`El día ${dias[i]} ${nombre} corrió ${kms} kms`)
+		}
+
+const promedioKms = totalKms / length
+console.log(`En promedio, ${nombre} corrió ${totalKms.toFixed(2)} `)
+	</script>
+</html>
