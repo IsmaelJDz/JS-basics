@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo while in JS</title>
+</head>
+<body>
+	<h1>Ciclo while in Js</h1>
+</body>
+	<script>
+		
+		let vidaGoku = 100
+		let vidaSuperman = 100
+
+		const MIN_POWER = 5
+		const MAX_POWER = 12
+
+		const ambosSiguenVivos = () => vidaGoku > 0 && vidaSuperman > 0
+		const calculaGolpe = () => Math.round(Math.random() * (MAX_POWER - MIN_POWER) + MIN_POWER)
+
+		// funcion normal
+		// function ambosSiguenVivos() {
+		// 	return vidaGoku > 0 && vidaSuperman > 0
+		// }
+
+		const gokuSigueVivo = () => vidaGoku > 0
+
+		let round = 0
+
+		while (ambosSiguenVivos()){
+			round++
+			console.log(`Round ${round}`)
+
+			const golpeGoku = calculaGolpe()
+			const golpeSuperman = calculaGolpe()
+
+			if (golpeGoku > golpeSuperman) {
+				//ataca Goku
+				console.log(`Goku ataca a superman con un golpe de ${golpeGoku}`)
+				vidaSuperman -= golpeGoku
+				console.log(`Superman queda en ${vidaSuperman} de vida`)
+			}
+			else
+			{
+				console.log(`Superman ataca a goku con un golpe de ${golpeSuperman}`)
+				vidaGoku -= golpeSuperman
+				console.log(`Goku queda en ${vidaGoku} de vida`)
+			}
+		}
+
+		if (gokuSigueVivo()) {
+			console.log(`Goku ganó la pelea. Su vida es de ${vidaGoku}`)
+		}
+		else
+		{
+			console.log(`Superman gano la pelea. Su vida es de ${vidaSuperman}`)
+		}
+
+	</script>
+</html>
