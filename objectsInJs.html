@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects in JS</title>
+</head>
+<body>
+	<h1>Objects in Js</h1>
+</body>
+<script>
+	const p1 = {
+		x: 0,
+		y: 4
+	}
+
+	const p2 = {
+		x: 3,
+		y: 0
+	}
+
+	function distance(p1, p2){
+		const x = p1.x - p2.x
+		const y = p1.y - p2.y
+
+		return Math.sqrt(x * x + y * y)
+	}
+
+	console.log(distance(p1, p2))
+	console.log(distance(p1, {x: 20, y: -7}))
+</script>
+</html>
