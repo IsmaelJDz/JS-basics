@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dates in JS</title>
+</head>
+<body>
+	<h1>Dates in JavaScript</h1>
+</body>
+<script>
+	let born = new Date(1987, 2, 3)
+	let today = new Date()
+
+	let time = today - born
+	const timeSeconds = time / 1000
+	const timeMin = timeSeconds / 60
+	const timeHours = timeMin / 60
+
+	const nextBirthday = new Date(born.getFullYear(), born.getMonth(), born.getDate())
+	const daysSpanish = [
+		"Domingo",
+		"Lunes",
+		"Martes",
+		"Miercoles",
+		"Jueves",
+		"Viernes",
+		"Sabado",
+	]
+
+	daysSpanish[nextBirthday.getDay()]
+</script>
+</html>
