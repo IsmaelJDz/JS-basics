@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Operations with Arrays In Js</title>
+    </head>
+    <body>
+        <h1>Operations with Arrays Vars in Js</h1>
+    </body>
+    <script>
+
+    //method sum numbers with use acum + number, but not sum all number
+    function suma(...numbers) {
+        //let acum = 0
+        //
+        // for (let i = 0; i < numbers.length; i++) {
+        //     acum += numbers[i]
+        // }
+
+        return numbers.reduce(function(acum, numer){
+            acum += numer
+            return acum
+        }, 0)
+    }
+
+    // function doubles(...numers) {
+    //     return numers.map( numer => numer * 2)
+    // }
+
+    // methos with Arrow functions return Array * 2
+    const doubles = (...numers) => numers.map( numer => numer * 2)
+
+    // function that return array pars
+    const pars = (...numbers) => numbers.filter(numer => numer % 2 == 0)
+
+    suma(7, 9)
+
+    </script>
+</html>
