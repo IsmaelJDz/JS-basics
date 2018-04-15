@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Scope In Js</title>
+    </head>
+    <body>
+        <h1>Scope Vars in Js</h1>
+    </body>
+    <script>
+        // var nombre = "Ismael"
+        //
+        // function saludar() {
+        //     if (true) {
+        //         var nombre = "Eric"
+        //     }
+        //     console.log(`hola ${nombre}`);
+        // }
+
+        nombre = "Ismael"
+
+        function saludar10(nombre) {
+            for (var i = 0; i < 10; i++) {
+                console.log(`hola ${nombre}`)
+            }
+
+            console.log(`el valor de i es ${i}`)
+        }
+
+        saludar10();
+
+    </script>
+</html>
