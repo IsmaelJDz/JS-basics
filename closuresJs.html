@@ -23,8 +23,18 @@
             }
         }
 
+        function PrefixSumWord(word) {
+            return function Prefix(prefix) {
+                console.log(`Esto es ${word + prefix}`);
+            }
+        }
+
+        const Example = PrefixSumWord('re')
         const Barrios = GrettingsFamily('Barrios')
         const Perez =  GrettingsFamily('Perez')
+
+        //Example + Prefix
+        Example('malo')
 
         Barrios('Ismael')
         Barrios('Mari')
