@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Closures in Js</title>
+    </head>
+    <body>
+        <h1>Examples of closures in Js</h1>
+    </body>
+    <script>
+
+        // function saludarBarrios(nom) {
+        //     console.log(`hola ${nom} Barrios`);
+        // }
+        //
+        // function saludarPerez(nom) {
+        //     console.log(`hola ${nom} Perez`);
+        // }
+
+        function GrettingsFamily(lastname){
+            return function grettinPersonFamily(name) {
+                console.log(`Hola ${name} ${lastname}`);
+            }
+        }
+
+        const Barrios = GrettingsFamily('Barrios')
+        const Perez =  GrettingsFamily('Perez')
+
+        Barrios('Ismael')
+        Barrios('Mari')
+
+        Perez('Pedro')
+        Perez('Oscar')
+
+    </script>
+</html>
