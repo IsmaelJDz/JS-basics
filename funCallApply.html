@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Use of functions Call and Apply</title>
+    </head>
+    <body>
+        <h1>Use Call and Apply in Js</h1>
+        <script>
+
+            const Isma = {
+                nombre: 'Ismael',
+                apellido: 'Barr'
+            }
+
+            //method 1
+            // function saludar(name, veces) {
+            //     for (let i = 0; i < veces; i++) {
+            //         console.log(`Hola ${Isma.nombre} ${Isma.apellido}`);
+            //     }
+            // }
+
+            //method 2
+            function saludar(veces, uppercase) {
+                console.log(this);
+                let str = `Hola ${this.nombre} ${this.apellido}`
+                str = uppercase ? str.toUpperCase() : str
+                for (let i = 0; i < veces; i++) {
+                    console.log(str);
+                }
+            }
+
+            //saludar.call(Isma, 3, true)
+            const params = [3, true]
+            saludar.call(Isma, ...params)
+        </script>
+    </body>
+</html>
