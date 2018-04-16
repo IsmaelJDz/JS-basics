@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Use of Bind in Js</title>
+        <style>
+            *{
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" id="button">Offs</button>
+        <script>
+
+            class Toggable {
+                constructor(el){
+                    //inicializar el estado interno
+                    this.el = el
+                    this.el.innerHTML = 'Off'
+                    this.activated = false
+
+                    this.el.addEventListener('click', this.onClick.bind(this))
+                }
+
+                onClick(){
+                    //cambiar estado inerno de on a off
+                    //llamar a toogleText
+                    this.activated = !this.activated
+                    this.toogleText()
+
+                }
+
+                toogleText(){
+                    //cambiar el texto
+                    this.el.innerHTML = this.activated ? 'On' : 'Off'
+                }
+            }
+
+            const button = document.getElementById('button')
+            const miBoton = new Toggable(button)
+
+        </script>
+    </body>
+</html>
