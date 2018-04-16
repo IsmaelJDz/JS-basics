@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CallBack to Sever extern</title>
+</head>
+<body>
+	<h1>Callback Serve extern</h1>
+	<script>
+
+	//THIS EXAMPLE USE A SERVER WITH PITHON 2-7 python -m SimpleHTTPServer 8000
+
+	function get(URL, callback){
+		const xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function () {
+			const DONE = 4
+			const OK = 200
+			if (this.readyState ===DONE) {
+				if (this.status ===OK) {
+					callback(null, JSON.parse(this.responseText))
+				}
+				else
+				{
+					callback(new Error(`Se produjo un error al realizar el request: ${this.status}`))
+				}
+			}
+		}
+
+		xhr.open('GET', URL);
+		xhr.send(null);
+	}
+
+	get('https://swapi.co/api/people/1/', function onResponse(err, luke){
+		if (err) {
+			return console.log(`Request failed: ${err}`)
+		}else{
+
+			get(luke.homeworld, function onHomeworldResp(err, homeworld){
+				if (err) {
+					return console.log(`Request failed ${err}`)
+				}
+				else{
+					console.log(`Request succeded`)
+					console.log(`homeworld of luke is`, homeworld)
+				}
+			})
+
+			console.log(`Request succeded`)
+			console.log(`luke`, luke)
+		}
+	})
+	</script>
+</body>
+</html>
