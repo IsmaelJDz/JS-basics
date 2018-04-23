@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SetTimeout</title>
+</head>
+<body>
+	<h1>Example with setTimeout And setInterval</h1>
+	<p id="timer">Han pasado 0 segundos</p>
+	<script>
+
+		const timer = document.getElementById('timer');
+		let counter = 0;
+
+		// setTimeout(() => {
+		// 	document.write('han pasado 5 segundos')
+		// }, 5000)
+		setInterval(() => {
+			counter++
+			counter <= '1' ? timer.textContent = `ha pasado ${counter} segundo` : timer.textContent = `ha pasado ${counter} segundos`
+		}, 1000)
+	</script>
+</body>
+</html>
