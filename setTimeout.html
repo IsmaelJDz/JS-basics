@@ -7,18 +7,28 @@
 <body>
 	<h1>Example with setTimeout And setInterval</h1>
 	<p id="timer">Han pasado 0 segundos</p>
+	<button id="cancel">cancel</button>
 	<script>
 
-		const timer = document.getElementById('timer');
+		const $cancelButton = document.getElementById('cancel')
+		$cancelButton.addEventListener('click', function () {
+			clearTimeout(timeout)
+		})
+
+		//const timer = document.getElementById('timer');
 		let counter = 0;
 
-		// setTimeout(() => {
-		// 	document.write('han pasado 5 segundos')
-		// }, 5000)
-		setInterval(() => {
-			counter++
-			counter <= '1' ? timer.textContent = `ha pasado ${counter} segundo` : timer.textContent = `ha pasado ${counter} segundos`
+		const timeout = setInterval(() => {
+			console.log('han pasado 5 segundos')
 		}, 1000)
+		// setInterval(() => {
+		// 	counter++
+		// 	counter <= '1' ? timer.textContent = `ha pasado ${counter} segundo` : timer.textContent = `ha pasado ${counter} segundos`
+		// }, 1000)
+
+		// const timeout = setInterval(() => {
+
+		// }, 5000)
 	</script>
 </body>
 </html>
